@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A13D27D34979C2803FAF274A /* Pods_SwiftRnApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AC65C8C7B563F77CBA7164 /* Pods_SwiftRnApp.framework */; };
+		E85ABFC520B2DAA300847A65 /* RNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85ABFC220B2DAA300847A65 /* RNViewController.swift */; };
+		E85ABFC620B2DAA300847A65 /* CalendarManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E85ABFC320B2DAA300847A65 /* CalendarManagerBridge.m */; };
+		E85ABFC720B2DAA300847A65 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85ABFC420B2DAA300847A65 /* CalendarManager.swift */; };
 		E85D507020AC13A50051ED8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D506F20AC13A50051ED8A /* AppDelegate.swift */; };
 		E85D507220AC13A50051ED8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85D507120AC13A50051ED8A /* ViewController.swift */; };
 		E85D507520AC13A50051ED8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85D507320AC13A50051ED8A /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		A8AC65C8C7B563F77CBA7164 /* Pods_SwiftRnApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRnApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B938FE789BBC3BA6BBDCC460 /* Pods-SwiftRnApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRnApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftRnApp/Pods-SwiftRnApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E85ABFC220B2DAA300847A65 /* RNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNViewController.swift; sourceTree = "<group>"; };
+		E85ABFC320B2DAA300847A65 /* CalendarManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarManagerBridge.m; sourceTree = "<group>"; };
+		E85ABFC420B2DAA300847A65 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		E85D506C20AC13A50051ED8A /* SwiftRnApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRnApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85D506F20AC13A50051ED8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E85D507120AC13A50051ED8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +65,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E85ABFC120B2DAA300847A65 /* RNFile */ = {
+			isa = PBXGroup;
+			children = (
+				E85ABFC220B2DAA300847A65 /* RNViewController.swift */,
+				E85ABFC420B2DAA300847A65 /* CalendarManager.swift */,
+				E85ABFC320B2DAA300847A65 /* CalendarManagerBridge.m */,
+			);
+			path = RNFile;
+			sourceTree = "<group>";
+		};
 		E85D506320AC13A50051ED8A = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +96,7 @@
 		E85D506E20AC13A50051ED8A /* SwiftRnApp */ = {
 			isa = PBXGroup;
 			children = (
+				E85ABFC120B2DAA300847A65 /* RNFile */,
 				E85D506F20AC13A50051ED8A /* AppDelegate.swift */,
 				E85D507120AC13A50051ED8A /* ViewController.swift */,
 				E85D507320AC13A50051ED8A /* Main.storyboard */,
@@ -167,11 +184,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRnApp/Pods-SwiftRnApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
+				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
+				"${BUILT_PRODUCTS_DIR}/React/React.framework",
 				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
+				"${BUILT_PRODUCTS_DIR}/yoga/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -203,7 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E85ABFC520B2DAA300847A65 /* RNViewController.swift in Sources */,
+				E85ABFC620B2DAA300847A65 /* CalendarManagerBridge.m in Sources */,
 				E85D507220AC13A50051ED8A /* ViewController.swift in Sources */,
+				E85ABFC720B2DAA300847A65 /* CalendarManager.swift in Sources */,
 				E85D507020AC13A50051ED8A /* AppDelegate.swift in Sources */,
 				E85D507820AC13A50051ED8A /* SwiftRnApp.xcdatamodeld in Sources */,
 			);

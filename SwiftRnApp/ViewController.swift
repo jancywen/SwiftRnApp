@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func btn_action(_ sender: Any) {
+        self.navigationController?.pushViewController(RNViewController(), animated: true)
+    }
+    
 }
 
