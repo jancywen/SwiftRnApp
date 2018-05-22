@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Zip
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        unZipFile()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,3 +28,23 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController {
+    fileprivate func unZipFile() {
+        // 测试解压工程内的zip文件保存到沙盒内
+        // 沙盒路径: let strUrl: String = "file://" + NSHomeDirectory() + "/Documents"
+        
+        do {
+            if let filePath = Bundle.main.url(forResource: "bundles", withExtension: "zip") {
+        
+                let documentsDirectory = FileManager.default.urls(for:.documentDirectory, in: .userDomainMask)[0]
+                try Zip.unzipFile(filePath, destination: documentsDirectory, overwrite: true, password: nil, progress: { (progress) -> () in
+                    print(progress)
+                })
+            }
+        }
+        catch {
+            print("Something went wrong")
+        }
+        
+    }
+}
